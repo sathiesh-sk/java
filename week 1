@@ -342,3 +342,170 @@ public class PrintDigits {
         }
     }
 }
+
+Q19)
+import java.util.Scanner;
+public class SumDivisible {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int start = sc.nextInt();
+        int end = sc.nextInt();
+        int sum = 0;
+        for (int i = start; i <= end; i++) {
+            if (i % 3 == 0 || i % 5 == 0) {
+                sum += i;
+            }
+        }
+        System.out.println(sum);
+        sc.close();
+    }
+}
+
+
+Q20)
+import java.util.Scanner;
+public class DigitCount {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        n = Math.abs(n);
+        int count = 0;
+        if (n == 0) {
+            count = 1; // Special case: 0 has 1 digit
+        } else {
+            while (n > 0) {
+                count++;
+                n /= 10;
+            }
+        }
+        System.out.println(count);
+        sc.close();
+    }
+}
+
+Q21) Sum of Digits
+import java.util.Scanner;
+public class Sum {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        n = Math.abs(n); 
+        int sum = 0;
+        while (n > 0) {
+            sum += n % 10;  
+            n /= 10;       
+        }
+        System.out.println(sum);
+        sc.close();
+    }
+}
+
+Q22) 
+import java.util.Scanner;
+public class HarshadNumber {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int temp = Math.abs(n); 
+        int sum = 0;
+        while (temp > 0) {
+            sum += temp % 10;
+            temp /= 10;
+        }
+        if (sum != 0 && n % sum == 0) {
+            System.out.println("Harshad Number");
+        } else {
+            System.out.println("Not Harshad Number");
+        }
+        sc.close();
+    }
+}
+
+Q23)
+import java.util.Scanner;
+public class PerfectNumber {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if (n <= 0) {
+            System.out.println("Not Perfect Number"); 
+            sc.close();
+            return;
+        }
+        int sum = 0;
+        for (int i = 1; i <= n / 2; i++) {
+            if (n % i == 0) {
+                sum += i;
+            }
+        }
+        if (sum == n) {
+            System.out.println("Perfect Number");
+        } else {
+            System.out.println("Not Perfect Number");
+        }
+        sc.close();
+    }
+}
+
+Q24)
+import java.util.Scanner;
+public class PrimeCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if (n <= 1) {
+            System.out.println("Not Prime");
+        } else {
+            boolean isPrime = true;
+            for (int i = 2; i <= Math.sqrt(n); i++) {
+                if (n % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if (isPrime) {
+                System.out.println("Prime");
+            } else {
+                System.out.println("Not Prime");
+            }
+        }
+        sc.close();
+    }
+}
+
+Q25)
+import java.util.Scanner;
+public class PerfectSquareCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if (n < 0) {
+            System.out.println("Not Perfect Square");
+        } else {
+            int sqrt = (int)Math.sqrt(n);  
+            if (sqrt * sqrt == n) {
+                System.out.println("Perfect Square");
+            } else {
+                System.out.println("Not Perfect Square");
+            }
+        }
+        sc.close();
+    }
+}
+
+Q26)
+import java.util.Scanner;
+public class FibonacciSeries {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int a = 0, b = 1;
+        for (int i = 1; i <= N; i++) {
+            System.out.print(a + " ");
+            int next = a + b;
+            a = b;
+            b = next;
+        }
+        sc.close();
+    }
+}
